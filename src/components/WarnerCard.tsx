@@ -1,6 +1,7 @@
 import { getEnviroment } from "../helpers/getEnviroment";
 import warnerPlayImage from "../assets/warnerPlay.png";
 import { landingEvius } from "../constants/urlRedirects";
+import { Button } from "./ui/Button";
 
 export const WarnerCard = () => {
   return (
@@ -12,15 +13,16 @@ export const WarnerCard = () => {
           className="w-full h-full max-w-[446px] max-h-[653px] object-contain rounded-md transition-transform duration-300"
         />
       </div>
-      <button
-        className="mt-4 px-12 py-5 text-xl text-white font-semibold rounded-full transition-all duration-300 hover:opacity-90 hover:cursor-pointer hover:scale-110 hover:shadow-lg transform w-full"
-        style={{ backgroundColor: "#00329A" }}
-        onClick={() =>
-          window.open(getEnviroment().VITE_EVIUS ?? landingEvius, "_blank")
-        }
-      >
-        Inscríbete
-      </button>
+      <div className="w-[90%]">
+        <Button
+          style={{ backgroundColor: "#00329A" }}
+          onClick={() =>
+            window.open(getEnviroment().VITE_EVIUS ?? landingEvius, "_blank")
+          }
+        >
+          Inscríbete
+        </Button>
+      </div>
     </div>
   );
 };

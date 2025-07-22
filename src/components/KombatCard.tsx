@@ -1,6 +1,7 @@
 import { getEnviroment } from "../helpers/getEnviroment";
 import finalKombatImage from "../assets/finalKombat.png";
 import { finalKombat } from "../constants/urlRedirects";
+import { Button } from "./ui/Button";
 
 export const KombatCard = () => {
   return (
@@ -12,18 +13,19 @@ export const KombatCard = () => {
           className="w-full h-full max-w-[446px] max-h-[653px] object-contain rounded-md transition-transform duration-300"
         />
       </div>
-      <button
-        className="mt-4 px-12 py-5 text-xl text-white font-semibold rounded-full transition-all duration-300 hover:opacity-90 hover:cursor-pointer hover:scale-110 hover:shadow-lg transform w-full"
-        style={{ backgroundColor: "#00329A" }}
-        onClick={() =>
-          window.open(
-            getEnviroment().VITE_FINAL_KOMBAT ?? finalKombat,
-            "_blank"
-          )
-        }
-      >
-        Inscríbete
-      </button>
+      <div className="w-[90%]">
+        <Button
+          style={{ backgroundColor: "#00329A" }}
+          onClick={() =>
+            window.open(
+              getEnviroment().VITE_FINAL_KOMBAT ?? finalKombat,
+              "_blank"
+            )
+          }
+        >
+          Inscríbete
+        </Button>
+      </div>
     </div>
   );
 };
